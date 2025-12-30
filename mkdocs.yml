@@ -64,8 +64,8 @@ nav:
     - Caching & Reproducibility: features/caching.md
     - Reporting: features/reporting.md
   - Templates:
-    - sklearn-basic: templates/sklearn-basic.md
-    - premier-league: templates/premier-league.md
+    - Sklearn Basic: templates/sklearn-basic.md
+    - Premier League: templates/premier-league.md
   - Web UI:
     - Local Web UI: web-ui/local-ui.md
   - Advanced Topics:
