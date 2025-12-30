@@ -1,6 +1,7 @@
 site_name: ExpOps User Guide
 site_description: User guide for the ExpOps MLOps platform
 site_author: ExpOps Team
+site_url: https://poon-zx.github.io/expops-user-guide/
 repo_url: https://github.com/poonzx/expops-user-guide
 repo_name: expops-user-guide
 
