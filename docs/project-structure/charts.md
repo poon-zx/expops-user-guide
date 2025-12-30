@@ -4,9 +4,22 @@ ExpOps supports both static and dynamic chart generation for visualizing experim
 
 ## Static Charts
 
-**Location**: `charts/plot_metrics.py`
-
 Static charts generate PNG image files that are saved to disk.
+
+### Configuration
+
+Static chart scripts are configured in `configs/project_config.yaml`:
+
+```yaml
+reporting:
+  static_entrypoint: "projects/my-project/charts/plot_metrics.py"
+  charts:
+    - name: "my_chart"
+      probe_paths:
+        data_source: "process_name/step_name"
+```
+
+The `static_entrypoint` path is relative to the workspace root. You can place your chart scripts anywhere and configure the path accordingly.
 
 ### Chart Functions
 
@@ -28,6 +41,8 @@ def plot_metrics(context: ChartContext):
     plt.savefig("output.png")
 ```
 
+**Note**: The function name should match the chart `name` defined in `project_config.yaml`, or be registered via the `@chart()` decorator.
+
 ### Metrics Access
 
 Charts can read metrics from previous pipeline steps via `ChartContext`:
@@ -44,9 +59,23 @@ artifacts/charts/<run-id>/
 
 ## Dynamic Charts
 
-**Location**: `charts/plot_metrics.js`
-
 Dynamic charts provide real-time, interactive visualizations.
+
+### Configuration
+
+Dynamic chart scripts are configured in `configs/project_config.yaml`:
+
+```yaml
+reporting:
+  dynamic_entrypoint: "projects/my-project/charts/plot_metrics.js"
+  charts:
+    - name: "my_dynamic_chart"
+      type: dynamic
+      probe_paths:
+        data_source: "process_name/step_name"
+```
+
+The `dynamic_entrypoint` path is relative to the workspace root. If not specified, the system will attempt to derive it from `static_entrypoint` by changing the `.py` extension to `.js`.
 
 ### Features
 
@@ -68,11 +97,24 @@ subscribeToMetrics((metrics) => {
 
 ## Chart Dependencies
 
-**Location**: `charts/requirements.txt`
+Chart dependencies are configured separately from the main project dependencies to reduce training environment overhead.
 
-Separate dependencies for chart generation:
-- Visualization libraries (matplotlib, seaborn)
-- Minimal dependencies to reduce training environment overhead
+### Configuration
+
+Chart dependencies are specified in `project_config.yaml`:
+
+```yaml
+environment:
+  venv:
+    reporting:
+      name: "my-project-env-reporting"
+      requirements_file: "projects/my-project/charts/requirements.txt"
+```
+
+The `requirements_file` path is relative to the workspace root. This allows you to:
+- Keep visualization libraries separate from training dependencies
+- Use minimal dependencies for chart generation
+- Include libraries like matplotlib, seaborn, plotly, etc.
 
 ## Viewing Charts
 

@@ -14,11 +14,13 @@ This uses local workers for parallel step execution.
 
 ## Cluster Execution
 
-Execute pipelines on distributed clusters using Dask.
+Execute pipelines on distributed clusters using Dask as the underlying distributed computing framework.
 
-### SLURM Support
+**Note**: Dask is the execution engine used by all cluster providers, not a provider itself. Providers determine how the Dask cluster is created or connected.
 
-Run on SLURM clusters:
+### SLURM Provider
+
+Run on SLURM clusters by creating a Dask cluster via SLURM job submission:
 
 1. Install SLURM dependencies:
 ```bash
@@ -38,15 +40,13 @@ memory_per_worker: 4GB
 expops run my-project
 ```
 
-### Dask Cluster
-
-Connect to existing Dask clusters or create new ones.
+The SLURM provider uses `dask-jobqueue` to automatically submit Dask scheduler and worker jobs to the SLURM cluster.
 
 ## Configuration
 
 Cluster settings are defined in `configs/cluster_config.yaml`:
 
-- **Provider**: `slurm`, `dask`, or other providers
+- **Provider**: `slurm`
 - **Workers**: Number of worker nodes
 - **Resources**: Cores and memory per worker
 - **Queue settings**: Job queue and walltime

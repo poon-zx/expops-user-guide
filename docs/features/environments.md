@@ -33,7 +33,6 @@ Python's built-in virtual environment manager:
 
 Conda environment manager:
 - Useful for complex dependencies
-- Better for scientific computing packages
 - Supports non-Python dependencies
 
 ## Automatic Management
@@ -51,7 +50,6 @@ Environment settings are configured in `configs/project_config.yaml`:
 ```yaml
 environment:
   type: venv  # or conda
-  python_version: "3.9"
 ```
 
 ## Benefits

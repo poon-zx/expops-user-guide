@@ -21,6 +21,8 @@ model:
 - Limited to single machine
 - No web UI metrics support
 
+**Caching Limitation**: When using the default in-memory KV backend, caching only works within a single process execution. The cache metadata (which tracks where cached results are stored) is lost when the process restarts, so cached results cannot be retrieved across runs even if the cache files exist on disk. For persistent caching across runs, you must configure a persistent KV backend (see [KV Backends](#kv-backends) below).
+
 ### Google Cloud Storage (GCS)
 
 Remote backend for shared caching:
@@ -50,7 +52,16 @@ Implement custom backends for other storage systems.
 
 ## KV Backends
 
-Key-value backends for metrics and metadata:
+Key-value backends for metrics, metadata, and cache indexing:
+
+The KV backend stores cache metadata (indexes that track where cached results are located). This is separate from the cache backend which stores the actual cached data files.
+
+**Default**: If not specified, the system uses an in-memory KV store which is **not persistent**. This means:
+- Cache metadata is lost when the process restarts
+- Caching only works within a single process execution
+- Cached results cannot be retrieved across runs
+
+For persistent caching across runs, configure a persistent KV backend (Redis or Firestore).
 
 ### Firestore
 
@@ -64,10 +75,42 @@ model:
       kv_backend: firestore
 ```
 
+**Features**:
+- Persistent cache metadata
+- Enables caching across runs
+- Web UI metrics support
+- Requires GCP credentials
+
 **Setup**:
 1. Create Firestore database
 2. Add credentials to `keys/firestore.json`
 3. Configure in project config
+
+### Redis
+
+Redis key-value store:
+
+```yaml
+model:
+  parameters:
+    cache:
+      backend: local
+      kv_backend: redis
+```
+
+**Features**:
+- Persistent cache metadata
+- Enables caching across runs
+- Fast in-memory access
+- Requires Redis server
+
+**Setup**:
+1. Install and run Redis server
+2. Configure connection in project config or via environment variables:
+   - `MLOPS_REDIS_HOST`
+   - `MLOPS_REDIS_PORT`
+   - `MLOPS_REDIS_DB`
+   - `MLOPS_REDIS_PASSWORD`
 
 ## Configuration
 
@@ -79,8 +122,10 @@ model:
     cache:
       backend: gcs  # or local, custom
       bucket: my-bucket  # for GCS
-      kv_backend: firestore  # optional
+      kv_backend: firestore  # optional: firestore, redis, or memory (default, not persistent)
 ```
+
+**Note**: The `kv_backend` setting controls where cache metadata is stored. For persistent caching across runs, use `firestore` or `redis`. The default `memory` backend only works within a single process execution.
 
 ## Web UI Requirements
 

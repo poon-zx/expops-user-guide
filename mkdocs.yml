@@ -2,7 +2,7 @@ site_name: ExpOps User Guide
 site_description: User guide for the ExpOps MLOps platform
 site_author: ExpOps Team
 repo_url: https://github.com/poonzx/expops-user-guide
-repo_name: mlops-platform
+repo_name: expops-user-guide
 
 theme:
   name: material

@@ -48,6 +48,29 @@ projects/sklearn-basic/configs/project_config.yaml
 
 By default, the template uses a **local-first cache backend**. To enable cross-process live metrics (web UI) or remote backends, update `model.parameters.cache.backend` in the project config.
 
+### Important: Caching and Web UI Requirements
+
+**For local development with persistent caching and web UI support**, you need to configure a persistent KV backend. The default in-memory KV backend does not support:
+- Persistent caching across runs (cache metadata is lost when the process restarts)
+- Web UI metrics and charts
+
+To enable both features, configure a GCP KV backend (Firestore) in your `project_config.yaml`:
+
+```yaml
+model:
+  parameters:
+    cache:
+      backend: local  # or gcs
+      kv_backend: firestore  # Required for persistent caching and web UI
+```
+
+**Setup steps**:
+1. Create a Firestore database in Google Cloud
+2. Add credentials to `projects/sklearn-basic/keys/firestore.json`
+3. Configure the KV backend in your project config
+
+See the [Backends](../advanced/backends.md) documentation for more details on KV backends and setup instructions.
+
 ## Running on a Cluster
 
 To run on a distributed cluster (e.g., SLURM):

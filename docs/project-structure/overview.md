@@ -21,9 +21,6 @@ my-project/
 ├── keys/                         # Credentials (e.g., firestore.json)
 └── artifacts/                    # Generated artifacts
     ├── charts/
-    ├── checkpoints/
-    ├── data/
-    └── models/
 ```
 
 ## Key Components
