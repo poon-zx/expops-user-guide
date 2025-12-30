@@ -71,11 +71,3 @@ expops run my-project --local
 ```bash
 expops run my-project
 ```
-
-## Configuration
-
-The template demonstrates:
-- **Remote cache backend**: GCS or other backends
-- **Cluster execution**: SLURM integration
-- **Dynamic reporting**: Real-time charts
-- **Complex DAG**: Multiple dependent steps

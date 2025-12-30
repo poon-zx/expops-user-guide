@@ -51,4 +51,4 @@ The template uses:
 You can customize:
 - Model hyperparameters in `project_config.yaml`
 - Pipeline steps in `models/sklearn_model.py`
-- Chart visualizations in `charts/plot_metrics.py`
+- Chart visualizations in `charts/plot_metrics.py` 
