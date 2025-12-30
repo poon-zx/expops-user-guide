@@ -85,9 +85,3 @@ Multi-level caching and reproducibility provide:
 - **Reproducible results**: Same inputs produce same outputs
 - **Cost savings**: Avoid redundant computation at both step and process levels
 
-## Next Steps
-
-- Learn about [Backends](../advanced/backends.md)
-- Understand [Pipeline Execution](pipelines.md)
-- Explore [Configuration Files](../project-structure/configuration.md)
-

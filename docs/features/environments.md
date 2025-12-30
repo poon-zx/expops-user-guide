@@ -60,9 +60,4 @@ Environment isolation provides:
 - **Clean separation**: Training vs. reporting dependencies
 - **Easy cleanup**: Remove environments when done
 
-## Next Steps
-
-- Learn about [Project Structure](../project-structure/overview.md)
-- Understand [Dependencies](../project-structure/dependencies.md)
-- Explore [Configuration Files](../project-structure/configuration.md)
 

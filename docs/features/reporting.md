@@ -132,9 +132,3 @@ The `requirements_file` path is relative to the workspace root. This allows you 
 - Keep visualization libraries separate from training dependencies
 - Use minimal dependencies for chart generation
 - Include libraries like matplotlib, seaborn, plotly, etc.
-
-## Next Steps
-
-- Learn about the [Web UI](../web-ui/local-ui.md)
-- Explore [Reporting Features](../features/reporting.md)
-- See template projects for chart examples

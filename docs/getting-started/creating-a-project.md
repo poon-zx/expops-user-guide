@@ -53,9 +53,3 @@ By default, projects use an in-memory KV backend which **does not support persis
 
 See the [Backends](../advanced/backends.md) documentation for detailed setup instructions.
 
-## Next Steps
-
-- Learn about [Project Structure](../project-structure/overview.md) in detail
-- Configure your [Project Configuration](../project-structure/configuration.md)
-- Write your [Model Code](../project-structure/model-code.md)
-

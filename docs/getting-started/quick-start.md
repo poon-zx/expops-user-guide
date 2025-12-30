@@ -81,10 +81,3 @@ To run on a distributed cluster (e.g., SLURM):
 ```bash
 expops run sklearn-basic
 ```
-
-## Next Steps
-
-- Learn about [Creating a Project](creating-a-project.md) from scratch
-- Explore the [Project Structure](../project-structure/overview.md)
-- Check out available [Templates](../templates/available-templates.md)
-

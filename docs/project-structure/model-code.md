@@ -150,10 +150,3 @@ def define_downstream_process(data, hyperparameters):
 See template projects for complete examples:
 - `sklearn-basic`: Simple sklearn pipeline
 - `premier-league`: Complex pipeline with multiple steps
-
-## Next Steps
-
-- Learn about [Chart Generation](charts.md)
-- Understand [Pipeline Execution](../features/pipelines.md)
-- Explore [Advanced Topics](../advanced/custom-models.md)
-

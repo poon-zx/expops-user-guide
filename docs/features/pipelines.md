@@ -128,10 +128,3 @@ ExpOps automatically determines execution order based on:
 - **Available resources**: Distributed across workers when using cluster execution
 
 Processes execute in topological order (respecting dependencies), and independent processes run in parallel.
-
-## Next Steps
-
-- Learn about [Distributed Computing](distributed.md)
-- Understand [Caching & Reproducibility](caching.md)
-- Explore [Model Code](../project-structure/model-code.md)
-

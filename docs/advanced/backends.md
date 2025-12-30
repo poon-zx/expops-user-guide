@@ -134,9 +134,3 @@ For web UI metrics and charts:
 - Configure KV backend for metrics
 - Ensure credentials are set up
 
-## Next Steps
-
-- Learn about [Caching & Reproducibility](../features/caching.md)
-- Understand [Configuration Files](../project-structure/configuration.md)
-- Explore [Web UI](../web-ui/local-ui.md)
-

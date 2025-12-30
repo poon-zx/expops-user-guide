@@ -56,10 +56,3 @@ See [Chart Generation](charts.md) for details.
 - **charts/requirements.txt**: Reporting-specific dependencies
 
 See [Dependencies](dependencies.md) for details.
-
-## Next Steps
-
-- Learn about [Configuration Files](configuration.md)
-- Understand [Model Code](model-code.md) structure
-- Explore [Chart Generation](charts.md) options
-

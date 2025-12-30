@@ -37,7 +37,6 @@ http://127.0.0.1:8000
 ### Interact with Dynamic Charts
 
 - Real-time metric visualization
-- Interactive Chart.js charts
 - Live updates during execution
 - Multiple chart types
 
@@ -57,7 +56,7 @@ Ensure your `project_config.yaml` has:
 model:
   parameters:
     cache:
-      backend: gcs  # or other remote backend for metrics
+      backend: gcs
 ```
 
 Local cache backends work for execution but metrics/charts require remote backends for the web UI.
@@ -75,10 +74,3 @@ Local cache backends work for execution but metrics/charts require remote backen
 - Check that charts were generated in `artifacts/charts/`
 - Verify chart file paths
 - Ensure JavaScript charts are properly defined
-
-## Next Steps
-
-- Learn about [Reporting](../features/reporting.md)
-- Explore [Chart Generation](../project-structure/charts.md)
-- Understand [Backends](../advanced/backends.md)
-

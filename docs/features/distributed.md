@@ -59,9 +59,3 @@ ExpOps automatically:
 - Handles worker failures
 - Distributes steps across workers
 
-## Next Steps
-
-- Learn about [Cluster Configuration](../advanced/cluster-config.md)
-- Understand [Environment Isolation](environments.md)
-- Explore [Caching & Reproducibility](caching.md)
-

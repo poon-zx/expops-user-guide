@@ -28,24 +28,16 @@ expops run sklearn-basic --local
 
 This guide is organized into the following sections:
 
-- **[Getting Started](getting-started/installation.md)**: Installation and basic setup
+- **[Getting Started](getting-started/creating-a-project.md)**: Creating projects
 - **[Project Structure](project-structure/overview.md)**: Understanding the project layout
-- **[Features](features/capabilities.md)**: Detailed feature documentation
-- **[Templates](templates/available-templates.md)**: Available project templates
+- **[Features](features/caching.md)**: Detailed feature documentation
+- **[Templates](templates/sklearn-basic.md)**: Available project templates
 - **[Web UI](web-ui/local-ui.md)**: Using the local web interface
-- **[Advanced Topics](advanced/cluster-config.md)**: Advanced configuration and customization
 
 ## Installation
 
-The installed CLI command is **`expops`** (alias: `expops-platform`).
+The installed CLI command is **`expops`**.
 
 ```bash
 pip install expops
 ```
-
-## Next Steps
-
-- Read the [Installation Guide](getting-started/installation.md) for detailed setup instructions
-- Follow the [Quick Start](getting-started/quick-start.md) tutorial
-- Learn about [Creating a Project](getting-started/creating-a-project.md)
-
