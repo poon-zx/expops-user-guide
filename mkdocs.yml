@@ -64,9 +64,7 @@ nav:
     - Environment Isolation: features/environments.md
     - Caching & Reproducibility: features/caching.md
     - Reporting: features/reporting.md
-  - Templates:
-    - Sklearn Basic: templates/sklearn-basic.md
-    - Premier League: templates/premier-league.md
+
   - Web UI:
     - Local Web UI: web-ui/local-ui.md
   - Advanced Topics:
