@@ -11,6 +11,7 @@ expops create my-project --template sklearn-basic
 ```
 
 Available templates:
+
 - `sklearn-basic`: Runnable project skeleton with a tiny sklearn model
 - `premier-league`: Comprehensive ML project with cluster config and dynamic charts
 
@@ -45,9 +46,8 @@ my-project/
 
 By default, projects use an in-memory KV backend which **does not support persistent caching or web UI**. For local development with these features:
 
-1. Configure a persistent KV backend (Firestore or Redis) in `configs/project_config.yaml`
+1. Configure a persistent KV backend (Firestore) in `configs/project_config.yaml`
 2. For Firestore: Add credentials to `keys/firestore.json`
-3. For Redis: Ensure a Redis server is running and accessible
 
 See the [Backends](../advanced/backends.md) documentation for detailed setup instructions.
 

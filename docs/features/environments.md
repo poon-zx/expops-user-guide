@@ -55,6 +55,7 @@ environment:
 ## Benefits
 
 Environment isolation provides:
+
 - **Dependency isolation**: No conflicts between projects
 - **Reproducibility**: Consistent environments
 - **Clean separation**: Training vs. reporting dependencies

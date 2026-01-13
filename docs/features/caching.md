@@ -7,6 +7,7 @@ ExpOps provides intelligent multi-level caching and reproducibility guarantees. 
 ### Step-Level Caching
 
 Each pipeline step can be cached independently:
+
 - **Cache key**: Based on step inputs, configuration hash, and function code hash
 - **Cache lookup**: Automatic before step execution
 - **Granularity**: Individual steps within a process
@@ -17,6 +18,7 @@ Each pipeline step can be cached independently:
 ### Process-Level Caching
 
 Entire processes (containing multiple steps) can be cached as a single unit:
+
 - **Cache key**: Based on process inputs, configuration hash, and process function code hash
 - **Cache lookup**: Automatic before process execution
 - **Granularity**: Entire process as a single unit
@@ -74,12 +76,14 @@ reproducibility:
 ## Cache Invalidation
 
 Caches are invalidated when:
+
 - **Step-level**: Step code changes (detected via function hash), step inputs change, or step configuration changes
 - **Process-level**: Process code changes (detected via function hash), process inputs change, or process configuration changes
 
 ## Benefits
 
 Multi-level caching and reproducibility provide:
+
 - **Faster iterations**: Skip unchanged steps or entire processes
 - **Flexible granularity**: Choose step-level for fine-grained control or process-level for coarse-grained optimization
 - **Reproducible results**: Same inputs produce same outputs

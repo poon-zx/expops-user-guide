@@ -15,6 +15,7 @@ Functions decorated with `@chart()` generate visualizations. **Chart functions h
 #### Required Function Signature
 
 **Every static chart function MUST:**
+
 1. Accept `metrics` as the first parameter (Dict[str, Any])
 2. Accept `ctx` as the second parameter (ChartContext)
 3. Use `ctx.savefig()` to save figures
@@ -129,6 +130,7 @@ environment:
 ```
 
 The `requirements_file` path is relative to the workspace root. This allows you to:
+
 - Keep visualization libraries separate from training dependencies
 - Use minimal dependencies for chart generation
 - Include libraries like matplotlib, seaborn, plotly, etc.

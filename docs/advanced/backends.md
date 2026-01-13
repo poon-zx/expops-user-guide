@@ -16,6 +16,7 @@ model:
 ```
 
 **Features**:
+
 - Fast access
 - No external dependencies
 - Limited to single machine
@@ -36,12 +37,14 @@ model:
 ```
 
 **Features**:
+
 - Cross-machine sharing
 - Persistent storage
 - Web UI support
 - Requires GCP credentials
 
 **Setup**:
+
 1. Create GCS bucket
 2. Set up credentials in `keys/`
 3. Configure bucket name in config
@@ -57,11 +60,12 @@ Key-value backends for metrics, metadata, and cache indexing:
 The KV backend stores cache metadata (indexes that track where cached results are located). This is separate from the cache backend which stores the actual cached data files.
 
 **Default**: If not specified, the system uses an in-memory KV store which is **not persistent**. This means:
+
 - Cache metadata is lost when the process restarts
 - Caching only works within a single process execution
 - Cached results cannot be retrieved across runs
 
-For persistent caching across runs, configure a persistent KV backend (Redis or Firestore).
+For persistent caching across runs, configure a persistent KV backend (Firestore).
 
 ### Firestore
 
@@ -76,41 +80,17 @@ model:
 ```
 
 **Features**:
+
 - Persistent cache metadata
 - Enables caching across runs
 - Web UI metrics support
 - Requires GCP credentials
 
 **Setup**:
+
 1. Create Firestore database
 2. Add credentials to `keys/firestore.json`
 3. Configure in project config
-
-### Redis
-
-Redis key-value store:
-
-```yaml
-model:
-  parameters:
-    cache:
-      backend: local
-      kv_backend: redis
-```
-
-**Features**:
-- Persistent cache metadata
-- Enables caching across runs
-- Fast in-memory access
-- Requires Redis server
-
-**Setup**:
-1. Install and run Redis server
-2. Configure connection in project config or via environment variables:
-   - `MLOPS_REDIS_HOST`
-   - `MLOPS_REDIS_PORT`
-   - `MLOPS_REDIS_DB`
-   - `MLOPS_REDIS_PASSWORD`
 
 ## Configuration
 
@@ -125,7 +105,7 @@ model:
       kv_backend: firestore  # optional: firestore, redis, or memory (default, not persistent)
 ```
 
-**Note**: The `kv_backend` setting controls where cache metadata is stored. For persistent caching across runs, use `firestore` or `redis`. The default `memory` backend only works within a single process execution.
+**Note**: The `kv_backend` setting controls where cache metadata is stored. For persistent caching across runs, use `firestore`. The default `memory` backend only works within a single process execution.
 
 ## Web UI Requirements
 

@@ -34,6 +34,7 @@ expops run sklearn-basic --local
 ```
 
 This will:
+
 1. Set up the virtual environment
 2. Install dependencies
 3. Execute the pipeline
@@ -65,6 +66,7 @@ model:
 ```
 
 **Setup steps**:
+
 1. Create a Firestore database in Google Cloud
 2. Add credentials to `projects/sklearn-basic/keys/firestore.json`
 3. Configure the KV backend in your project config
