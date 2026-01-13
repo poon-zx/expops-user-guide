@@ -52,6 +52,7 @@ By default, the template uses a **local-first cache backend**. To enable cross-p
 ### Important: Caching and Web UI Requirements
 
 **For local development with persistent caching and web UI support**, you need to configure a persistent KV backend. The default in-memory KV backend does not support:
+
 - Persistent caching across runs (cache metadata is lost when the process restarts)
 - Web UI metrics and charts
 
